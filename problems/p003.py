@@ -18,8 +18,8 @@ def is_prime(number):
         return False
 
 def find_prime_factors(number):
-    return [x for x in factors if is_prime(x)]
+    return tuple(x for x in find_factors(number) if is_prime(x))
 
-NUMBER = 600851475143    
-factors = find_factors(NUMBER)
-print max(find_prime_factors(NUMBER))
+if __name__ == '__main__':
+    NUMBER = 600851475143    
+    print max(find_prime_factors(NUMBER))
