@@ -17,7 +17,9 @@ def is_prime(number):
     else:
         return False
 
+def find_prime_factors(number):
+    return [x for x in factors if is_prime(x)]
+
 NUMBER = 600851475143    
 factors = find_factors(NUMBER)
-prime_factors = [x for x in factors if is_prime(x)]
-print prime_factors[-1]
+print max(find_prime_factors(NUMBER))
