@@ -17,4 +17,4 @@ if __name__ == '__main__':
     for a,b,c in natural_nums_for_sum(1000):
         if is_pythagorean(a,b,c):
             print a*b*c
-            return
+            break
