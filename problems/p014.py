@@ -3,32 +3,28 @@ Project Eurler Problem 14
 http://projecteuler.net/problem=14
 '''
 
-def sequence_generator(n):
-    current_value = n
+sequence_cache = dict()
+
+def create_sequence(seed):
+    n = seed
     result = [n]
-    while current_value > 1:
-        if current_value%2 == 0:
-            current_value = current_value/2
+    while n > 1:
+        if n in sequence_cache:
+            result.extend(sequence_cache[n][1:])
+            n = result[-1]
         else:
-            current_value = current_value*3 +1
-        result.append(current_value)
+            if n % 2 == 0:
+                n =  n / 2
+            else:
+                n = 3 * n + 1
+            result.append(n)
+            sequence_cache[seed] = tuple(result)
     return result
-
-def sequence_length(n):
-    current_value = n
-    length  = 1
-    while current_value > 1:
-        if current_value%2 == 0:
-            current_value = current_value/2
-        else:
-            current_value = current_value*3 +1
-        length += 1
-    return length
-
+    
 def find_longest_sequence(under_value):
         max_value = [0,0]   #Number, Sequence Length
         for x in xrange(under_value):
-            seq_length = sequence_length(x)
+            seq_length = len(create_sequence(x))
             if seq_length > max_value[1]:
                 max_value = [x,seq_length]
         return max_value[0]
