@@ -8,7 +8,7 @@ import string
 def find_consecutive_chunks(input, chunk_size):
     chunks = list()
     for x in xrange(len(input)):
-        if x+5 < len(input) + 1:
+        if x+chunk_size <= len(input):
             chunks.append(input[x:x+chunk_size])
     return chunks
     
