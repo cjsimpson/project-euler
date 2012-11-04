@@ -1,5 +1,5 @@
 '''
-Project Eurler Problem 4
+Project Eurler Problem 6
 http://projecteuler.net/problem=6
 '''
 
