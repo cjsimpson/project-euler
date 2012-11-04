@@ -1,3 +1,8 @@
+'''
+Project Eurler Problem 8
+http://projecteuler.net/problem=8
+'''
+
 import string
 
 def find_consecutive_chunks(input, chunk_size):
