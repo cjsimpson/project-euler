@@ -4,16 +4,17 @@ http://projecteuler.net/problem=11
 '''
 from p008 import find_consecutive_chunks
 
+
 def product_of_nums(number_list):
-    return reduce(lambda x,y: x*y, number_list)
+    return reduce(lambda x, y: x*y, number_list)
 
 
 def grid_string_to_tuple(source):
     grid = []
     for line in source.splitlines():
         if line.strip() == '':
-            continue    #Skip empty lines
-        
+            continue  # Skip empty lines
+
         line_tuple = tuple(map(lambda x: int(x), line.split()))
         grid.append(line_tuple)
     return tuple(grid)
@@ -21,37 +22,37 @@ def grid_string_to_tuple(source):
 
 def find_adjacent_elements(grid, n):
     adjacent_itmes = []
-    
+
     def scan_horizontal():
         for row in grid:
             adjacent_itmes.extend(find_consecutive_chunks(row, n))
-            
+
     def scan_vertical():
-        for x in xrange(0,len(grid[0])):
+        for x in xrange(0, len(grid[0])):
             column = []
             for y in xrange(len(grid)):
                 column.append(grid[y][x])
             adjacent_itmes.extend(find_consecutive_chunks(column, n))
-    
+
     def scan_diag(direction):
         if direction == 'right':
             start = 0
             stop = len(grid)
-            increment = 1 
+            increment = 1
         else:
             start = len(grid)
             stop = 0
             increment = -1
-            
-        for x in range(start,stop,increment):
+
+        for x in range(start, stop, increment):
             diag = []
             x_cord = x
             y_cord = 0
-            
+
             for _ in xrange(len(grid)):
                 if x_cord >= len(grid) or y_cord >= len(grid):
                     break
-                elif x_cord <0 or y_cord <0:
+                elif x_cord < 0 or y_cord < 0:
                     break
                 else:
                     diag.append(grid[y_cord][x_cord])
@@ -89,7 +90,6 @@ if __name__ == '__main__':
      01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48
      '''
     grid = grid_string_to_tuple(source_grid)
-    adjacent_itmes = find_adjacent_elements(grid,4)
+    adjacent_itmes = find_adjacent_elements(grid, 4)
     max_product = max(map(product_of_nums, adjacent_itmes))
     print max_product
-    

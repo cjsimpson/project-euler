@@ -4,7 +4,7 @@ http://projecteuler.net/problem=2
 '''
 
 LIMIT = 4000000
-SEEDS = (1,2)
+SEEDS = (1, 2)
 
 def fib(limit):
     fib_sequence = list(SEEDS)
@@ -14,5 +14,4 @@ def fib(limit):
 
 if __name__ == '__main__':
     print sum(x for x in fib(LIMIT) if x%2 ==0)
-    
-        
+
