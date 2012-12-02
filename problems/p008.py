@@ -5,11 +5,11 @@ http://projecteuler.net/problem=8
 
 import string
 
-def find_consecutive_chunks(input, chunk_size):
+def find_consecutive_chunks(raw_data, chunk_size):
     chunks = list()
-    for x in xrange(len(input)):
-        if x+chunk_size <= len(input):
-            chunks.append(input[x:x+chunk_size])
+    for x in xrange(len(raw_data)):
+        if x+chunk_size <= len(raw_data):
+            chunks.append(raw_data[x:x+chunk_size])
     return chunks
     
 def find_product_of_digits(digits):

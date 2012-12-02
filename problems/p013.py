@@ -4,7 +4,7 @@ http://projecteuler.net/problem=13
 '''
 
 if __name__ == '__main__':
-    input = '''
+    input_data = '''
      37107287533902102798797998220837590246510135740250
      46376937677490009712648124896970078050417018260538
      74324986199524741059474233309513058123726617309629
@@ -108,7 +108,7 @@ if __name__ == '__main__':
      '''
     
     input_as_nums = []
-    for line in input.splitlines():
+    for line in input_data.splitlines():
         if line.strip() == '':
             continue
         input_as_nums.append(float(line.strip()))
