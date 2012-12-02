@@ -12,7 +12,7 @@ def is_prime(number):
             return False
     return True
 
-def primes_in_range(low, high):
+def primes_in_range(low,high):
     
     def remove_multiples(source, n):
         multiple = n

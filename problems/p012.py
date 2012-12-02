@@ -13,8 +13,8 @@ def triangle_number(n):
 
 if __name__ == '__main__':
     factors = 0
-    x = 0
+    z = 0
     while factors < 250:    #250 pairs of factors = 500 factors
-        x += 1
-        factors = len(find_factors(triangle_number(x)))
-    print triangle_number(x)
+        z += 1
+        factors = len(find_factors(triangle_number(z)))
+    print triangle_number(z)

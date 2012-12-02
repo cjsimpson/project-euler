@@ -4,7 +4,7 @@ http://projecteuler.net/problem=15
 '''
 from collections import deque
 
-class Grid_Point():
+class GridPoint():
     def __init__(self, position):
         self.right = None
         self.down = None
@@ -19,29 +19,29 @@ def create_grid_points(width, height):
     grid = set()
     for x in xrange(width):
         for y in xrange(height):
-            grid.add( (x,y) )
+            grid.add( (x, y) )
     return grid
 
 def make_route_tree(grid_width, grid_height):
     #1 more point than block
-    grid_width +=1
-    grid_height +=1
+    grid_width += 1
+    grid_height += 1
     
     grid = create_grid_points(grid_width, grid_height)
     
     point_cache = dict()
-    bottom_right = Grid_Point( (grid_width-1, grid_height-1) )
+    bottom_right = GridPoint( (grid_width-1, grid_height-1) )
     point_cache[(grid_width-1, grid_height-1)] = bottom_right 
 
     for x in range(grid_width-1, -1, -1):        #Start x at right hand side
         for y in range(grid_height-1, -1, -1):   #Start y at bottom
-            current_point = Grid_Point( (x,y) )
+            current_point = GridPoint( (x, y) )
             if (x+1, y) in grid:
                 current_point.right = point_cache[(x+1, y)]
 
             if (x, y+1) in grid:
                 current_point.down = point_cache[(x, y+1)]
-            point_cache[(x,y)] = current_point
+            point_cache[(x, y)] = current_point
             
     return point_cache
 
@@ -63,12 +63,12 @@ def find_all_paths(start_node, tree):
     return routes
 
 if __name__ == '__main__':
-    size = (2,2)
-    x,y = size
+    size = (2, 2)
+    x_cord, y_cord = size
     print size
     print
-    pc = make_route_tree(x,y)
-    root = pc[(0,0)]
+    pc = make_route_tree(x_cord, y_cord)
+    root = pc[(0, 0)]
     all_paths = find_all_paths(root, pc)
     count = len(all_paths)
     print count

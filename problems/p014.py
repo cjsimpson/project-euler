@@ -22,12 +22,12 @@ def create_sequence(seed):
     return result
     
 def find_longest_sequence(under_value):
-        max_value = [0,0]   #Number, Sequence Length
-        for x in xrange(under_value):
-            seq_length = len(create_sequence(x))
-            if seq_length > max_value[1]:
-                max_value = [x,seq_length]
-        return max_value[0]
+    max_value = [0, 0]   #Number, Sequence Length
+    for x in xrange(under_value):
+        seq_length = len(create_sequence(x))
+        if seq_length > max_value[1]:
+            max_value = [x, seq_length]
+    return max_value[0]
 
 if __name__ == '__main__':
     print find_longest_sequence(1000000)
