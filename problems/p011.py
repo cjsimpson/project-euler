@@ -6,7 +6,7 @@ from p008 import find_consecutive_chunks
 
 
 def product_of_nums(number_list):
-    return reduce(lambda x, y: x*y, number_list)
+    return reduce(lambda x, y: x * y, number_list)
 
 
 def grid_string_to_tuple(source):

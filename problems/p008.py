@@ -5,19 +5,21 @@ http://projecteuler.net/problem=8
 
 import string
 
+
 def find_consecutive_chunks(raw_data, chunk_size):
     chunks = list()
     for x in xrange(len(raw_data)):
-        if x+chunk_size <= len(raw_data):
-            chunks.append(raw_data[x:x+chunk_size])
+        if x + chunk_size <= len(raw_data):
+            chunks.append(raw_data[x: x + chunk_size])
     return chunks
-    
+
+
 def find_product_of_digits(digits):
     digit_list = [int(i) for i in str(digits)]
-    return reduce(lambda x,y: x*y, digit_list)
+    return reduce(lambda x, y: x * y, digit_list)
 
 if __name__ == '__main__':
-    
+
     #Storing as string to prevent 1000 char wide file
     raw_number = """
     73167176531330624919225119674426574742355349194934
@@ -41,11 +43,11 @@ if __name__ == '__main__':
     05886116467109405077541002256983155200055935729725
     71636269561882670428252483600823257530420752963450
      """
-     
+
     #Remove newlines and whitespace
-    parsed_number = string.replace(raw_number, '\n' , '')
-    parsed_number = string.replace(parsed_number, ' ' , '')
-    parsed_number = string.replace(parsed_number, '\t' , '')
+    parsed_number = string.replace(raw_number, '\n', '')
+    parsed_number = string.replace(parsed_number, ' ', '')
+    parsed_number = string.replace(parsed_number, '\t', '')
 
     consecutive_nums = find_consecutive_chunks(parsed_number, 5)
     products = [find_product_of_digits(x) for x in consecutive_nums]

@@ -5,6 +5,7 @@ http://projecteuler.net/problem=7
 
 from p003 import is_prime
 
+
 def find_nth_prime(n):
     prime_list = set()
     x = 1
@@ -13,6 +14,7 @@ def find_nth_prime(n):
             prime_list.add(x)
         x += 1
     return max(prime_list)
+
 
 if __name__ == '__main__':
     print find_nth_prime(10001)
