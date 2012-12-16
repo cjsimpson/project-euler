@@ -35,6 +35,9 @@ def primes_in_range(low, high):
 
     return potential_primes
 
-if __name__ == '__main__':
+def solve():
     print sum(primes_in_range(1, 2000000))
+
+if __name__ == '__main__':
+    solve()
 

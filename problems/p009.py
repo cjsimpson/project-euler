@@ -15,8 +15,11 @@ def natural_nums_for_sum(summation):
                 if a + b + c == summation:
                     yield (a, b, c)
 
-if __name__ == '__main__':
+def solve():
     for a, b, c in natural_nums_for_sum(1000):
         if is_pythagorean(a, b, c):
             print a * b * c
             break
+        
+if __name__ == '__main__':
+    solve()

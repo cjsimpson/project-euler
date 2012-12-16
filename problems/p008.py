@@ -18,8 +18,7 @@ def find_product_of_digits(digits):
     digit_list = [int(i) for i in str(digits)]
     return reduce(lambda x, y: x * y, digit_list)
 
-if __name__ == '__main__':
-
+def solve():
     #Storing as string to prevent 1000 char wide file
     raw_number = """
     73167176531330624919225119674426574742355349194934
@@ -52,3 +51,6 @@ if __name__ == '__main__':
     consecutive_nums = find_consecutive_chunks(parsed_number, 5)
     products = [find_product_of_digits(x) for x in consecutive_nums]
     print max(products)
+
+if __name__ == '__main__':
+    solve()

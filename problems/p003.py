@@ -26,6 +26,8 @@ def find_prime_factors(number):
     factors = reduce(lambda x, y: x + y, find_factors(number))
     return tuple(x for x in factors if is_prime(x))
 
+def solve(number):
+    print max(find_prime_factors(number))
+    
 if __name__ == '__main__':
-    NUMBER = 600851475143
-    print max(find_prime_factors(NUMBER))
+    solve(600851475143)

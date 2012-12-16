@@ -32,5 +32,8 @@ def find_longest_sequence(under_value):
     return max_value[0]
 
 
-if __name__ == '__main__':
+def solve():
     print find_longest_sequence(1000000)
+
+if __name__ == '__main__':
+    solve()

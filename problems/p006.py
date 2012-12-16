@@ -11,7 +11,10 @@ def find_sum_of_squares(numbers):
 def find_square_of_sums(numbers):
     return sum(numbers) ** 2
 
-if __name__ == '__main__':
+def solve():
     r = range(1, 101)
     result = find_square_of_sums(r) - find_sum_of_squares(r)
     print result
+    
+if __name__ == '__main__':
+    solve()

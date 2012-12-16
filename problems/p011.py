@@ -66,7 +66,7 @@ def find_adjacent_elements(grid, n):
     scan_diag('left')
     return adjacent_itmes
 
-if __name__ == '__main__':
+def solve():
     source_grid = '''
      08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
      49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00
@@ -93,3 +93,6 @@ if __name__ == '__main__':
     adjacent_itmes = find_adjacent_elements(grid, 4)
     max_product = max(map(product_of_nums, adjacent_itmes))
     print max_product
+
+if __name__ == '__main__':
+    solve()

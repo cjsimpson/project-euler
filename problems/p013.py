@@ -4,7 +4,7 @@ http://projecteuler.net/problem=13
 '''
 
 
-if __name__ == '__main__':
+def solve():
     input_data = '''
      37107287533902102798797998220837590246510135740250
      46376937677490009712648124896970078050417018260538
@@ -121,3 +121,6 @@ if __name__ == '__main__':
     input_as_nums = '%f' % summation
 
     print input_as_nums[0:10]
+    
+if __name__ == '__main__':
+    solve()

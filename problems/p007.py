@@ -15,6 +15,8 @@ def find_nth_prime(n):
         x += 1
     return max(prime_list)
 
-
-if __name__ == '__main__':
+def solve():
     print find_nth_prime(10001)
+    
+if __name__ == '__main__':
+    solve()

@@ -41,5 +41,8 @@ def find_lowest_common_multiple(list_of_numbers):
     result = reduce(lambda x, y: x * y, [k ** v for k, v in prime_count.iteritems()])
     return result
 
-if __name__ == '__main__':
+def solve():
     print find_lowest_common_multiple(range(1, 21))
+
+if __name__ == '__main__':
+    solve()
