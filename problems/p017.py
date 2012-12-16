@@ -15,7 +15,8 @@ NUMBER_WORDS = {1: 'one', 2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six',
                 20: 'twenty', 30: 'thirty', 40: 'forty', 50: 'fifty', 60: 'sixty',
                 70: 'seventy', 80: 'eighty', 90: 'ninety' , 0: ''
                 }
-SCALES = {2: 'hundred', 3: 'thousand', 6: 'million', 9: 'billion'} # Key = number of zeros
+
+SCALES = {2: 'hundred', 3: 'thousand', 6: 'million', 9: 'billion'} # Key represents number of zeros
 
 def n_slice(data_to_slice, slice_size, right_to_left=False):
     sliced_data = []
