@@ -65,13 +65,19 @@ def find_all_paths(start_node, tree):
 
     return routes
 
+
+
+def solve():
+    pass
+
 if __name__ == '__main__':
-    size = (12, 12)
-    x_cord, y_cord = size
-    print size
-    print
-    pc = make_route_tree(x_cord, y_cord)
-    root = pc[(0, 0)]
-    all_paths = find_all_paths(root, pc)
-    count = len(all_paths)
-    print count
+    solve()
+    #size = (12, 12)
+    #x_cord, y_cord = size
+    #print size
+    #print
+    #pc = make_route_tree(x_cord, y_cord)
+    #root = pc[(0, 0)]
+    #all_paths = find_all_paths(root, pc)
+    #count = len(all_paths)
+    #print count
