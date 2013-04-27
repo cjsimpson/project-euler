@@ -1,7 +1,7 @@
-'''
+"""
 Project Eurler Problem 4
 http://projecteuler.net/problem=4
-'''
+"""
 
 
 def is_number_a_palidrome(number):
@@ -16,9 +16,11 @@ def find_all_products(low_number, high_number):
                 all_products.add(x * y)
     return all_products
 
+
 def solve():
     all_palindromes = [x for x in find_all_products(100, 1000) if is_number_a_palidrome(x)]
     print max(all_palindromes)
+
 
 if __name__ == '__main__':
     solve()

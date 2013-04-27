@@ -1,7 +1,7 @@
-'''
+"""
 Project Eurler Problem 14
 http://projecteuler.net/problem=14
-'''
+"""
 
 sequence_cache = dict()
 
@@ -15,7 +15,7 @@ def create_sequence(seed):
             n = result[-1]
         else:
             if n % 2 == 0:
-                n = n / 2
+                n /= 2
             else:
                 n = 3 * n + 1
             result.append(n)
@@ -34,6 +34,7 @@ def find_longest_sequence(under_value):
 
 def solve():
     print find_longest_sequence(1000000)
+
 
 if __name__ == '__main__':
     solve()

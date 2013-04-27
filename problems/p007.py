@@ -1,7 +1,7 @@
-'''
+"""
 Project Eurler Problem 7
 http://projecteuler.net/problem=7
-'''
+"""
 
 from p003 import is_prime
 
@@ -15,8 +15,10 @@ def find_nth_prime(n):
         x += 1
     return max(prime_list)
 
+
 def solve():
     print find_nth_prime(10001)
-    
+
+
 if __name__ == '__main__':
     solve()

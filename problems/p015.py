@@ -1,7 +1,7 @@
-'''
+"""
 Project Eurler Problem 15
 http://projecteuler.net/problem=15
-'''
+"""
 from collections import deque
 
 
@@ -58,7 +58,7 @@ def find_all_paths(start_node, tree):
         current = tree[to_process_nodes.popleft()]
         current_route.append(current.position)
         node_children = [x.position for x in current.children() if x is not None]
-        if node_children == []:
+        if not node_children:
             routes.append(tuple(current_route))
             current_route.clear()
         to_process_nodes.extendleft(node_children)
@@ -66,9 +66,9 @@ def find_all_paths(start_node, tree):
     return routes
 
 
-
 def solve():
     pass
+
 
 if __name__ == '__main__':
     solve()

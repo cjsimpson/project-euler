@@ -1,7 +1,7 @@
-'''
+"""
 Project Eurler Problem 11
 http://projecteuler.net/problem=11
-'''
+"""
 from p008 import find_consecutive_chunks
 
 
@@ -21,18 +21,18 @@ def grid_string_to_tuple(source):
 
 
 def find_adjacent_elements(grid, n):
-    adjacent_itmes = []
+    adjacent_items = []
 
     def scan_horizontal():
         for row in grid:
-            adjacent_itmes.extend(find_consecutive_chunks(row, n))
+            adjacent_items.extend(find_consecutive_chunks(row, n))
 
     def scan_vertical():
         for x in xrange(0, len(grid[0])):
             column = []
             for y in xrange(len(grid)):
                 column.append(grid[y][x])
-            adjacent_itmes.extend(find_consecutive_chunks(column, n))
+            adjacent_items.extend(find_consecutive_chunks(column, n))
 
     def scan_diag(direction):
         if direction == 'right':
@@ -58,13 +58,14 @@ def find_adjacent_elements(grid, n):
                     diag.append(grid[y_cord][x_cord])
                     x_cord += increment
                     y_cord += 1
-            adjacent_itmes.extend(find_consecutive_chunks(diag, n))
+            adjacent_items.extend(find_consecutive_chunks(diag, n))
 
     scan_horizontal()
     scan_vertical()
     scan_diag('right')
     scan_diag('left')
-    return adjacent_itmes
+    return adjacent_items
+
 
 def solve():
     source_grid = '''
@@ -93,6 +94,7 @@ def solve():
     adjacent_itmes = find_adjacent_elements(grid, 4)
     max_product = max(map(product_of_nums, adjacent_itmes))
     print max_product
+
 
 if __name__ == '__main__':
     solve()

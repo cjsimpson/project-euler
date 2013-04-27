@@ -1,7 +1,7 @@
-'''
+"""
 Project Eurler Problem 13
 http://projecteuler.net/problem=13
-'''
+"""
 
 
 def solve():
@@ -121,6 +121,7 @@ def solve():
     input_as_nums = '%f' % summation
 
     print input_as_nums[0:10]
-    
+
+
 if __name__ == '__main__':
     solve()

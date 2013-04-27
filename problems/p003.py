@@ -1,7 +1,7 @@
-'''
+"""
 Project Eurler Problem 3
 http://projecteuler.net/problem=3
-'''
+"""
 
 
 def find_factors(number):
@@ -26,8 +26,10 @@ def find_prime_factors(number):
     factors = reduce(lambda x, y: x + y, find_factors(number))
     return tuple(x for x in factors if is_prime(x))
 
+
 def solve(number):
     print max(find_prime_factors(number))
-    
+
+
 if __name__ == '__main__':
     solve(600851475143)

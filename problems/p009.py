@@ -1,7 +1,7 @@
-'''
+"""
 Project Eurler Problem 9
 http://projecteuler.net/problem=9
-'''
+"""
 
 
 def is_pythagorean(a, b, c):
@@ -15,11 +15,13 @@ def natural_nums_for_sum(summation):
                 if a + b + c == summation:
                     yield (a, b, c)
 
+
 def solve():
     for a, b, c in natural_nums_for_sum(1000):
         if is_pythagorean(a, b, c):
             print a * b * c
             break
-        
+
+
 if __name__ == '__main__':
     solve()

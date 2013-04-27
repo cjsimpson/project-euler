@@ -1,7 +1,7 @@
-'''
+"""
 Project Eurler Problem 10
 http://projecteuler.net/problem=10
-'''
+"""
 #TODO: This still runs too slow
 
 
@@ -15,7 +15,6 @@ def is_prime(number):
 
 
 def primes_in_range(low, high):
-
     def remove_multiples(source, n):
         multiple = n
         multiplier = 2
@@ -35,8 +34,10 @@ def primes_in_range(low, high):
 
     return potential_primes
 
+
 def solve():
     print sum(primes_in_range(1, 2000000))
+
 
 if __name__ == '__main__':
     solve()

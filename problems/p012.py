@@ -1,7 +1,7 @@
-'''
+"""
 Project Eurler Problem 12
 http://projecteuler.net/problem=12
-'''
+"""
 
 from p003 import find_factors
 
@@ -12,6 +12,7 @@ def triangle_number(n):
         triangle_num += x
     return triangle_num
 
+
 def solve():
     factors = 0
     z = 0
@@ -19,6 +20,7 @@ def solve():
         z += 1
         factors = len(find_factors(triangle_number(z)))
     print triangle_number(z)
-    
+
+
 if __name__ == '__main__':
     solve()

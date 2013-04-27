@@ -1,7 +1,7 @@
-'''
+"""
 Project Eurler Problem 8
 http://projecteuler.net/problem=8
-'''
+"""
 
 import string
 
@@ -17,6 +17,7 @@ def find_consecutive_chunks(raw_data, chunk_size):
 def find_product_of_digits(digits):
     digit_list = [int(i) for i in str(digits)]
     return reduce(lambda x, y: x * y, digit_list)
+
 
 def solve():
     #Storing as string to prevent 1000 char wide file
@@ -51,6 +52,7 @@ def solve():
     consecutive_nums = find_consecutive_chunks(parsed_number, 5)
     products = [find_product_of_digits(x) for x in consecutive_nums]
     print max(products)
+
 
 if __name__ == '__main__':
     solve()
