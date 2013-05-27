@@ -9,7 +9,7 @@ EXAMPLE_DATA = """ 3
 class TestProblem018(unittest.TestCase):
     def test_parse(self):
         new_data = p018.parse_input(EXAMPLE_DATA)
-        expected = [['3'], ['7', '4'], ['2', '4', '6'], ['8', '5', '9', '3']]
+        expected = [(3,), (7, 4), (2, 4, 6), (8, 5, 9, 3)]
         self.assertEqual(new_data, expected)
 
     def test_solve_example(self):
