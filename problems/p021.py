@@ -7,26 +7,27 @@ def proper_divisors(n):
             divisors.append(x)
     return divisors
 
-def amicable_pairs_below(n):
-    divisor_sums = {}
-    for x in xrange(1, n):
-        divisor_sums[x] = sum(proper_divisors(x))
+def sum_proper_divisors(n):
+    return sum(proper_divisors(n))
 
+def sum_amicable_pairs_below(n):
     pairs = []
-    skip_items = []
-    for k,v in divisor_sums.iteritems():
-        if k in skip_items:
+    for x in xrange(1, n):
+        d1 = sum_proper_divisors(x)
+        if d1 == x:
             continue
-        if v in divisor_sums:
-            pairs.append(k)
-            pairs.append(v)
-            skip_items.append(k)
-            skip_items.append(v)
+        if d1 in pairs:
+            continue
+        d2 = sum_proper_divisors(d1)
+        if x == d2:
+            pairs.append(d1)
+            pairs.append(d2)
 
+    print pairs
     return sum(pairs)
 
 def solve(n):
-    return amicable_pairs_below(n)
+    return sum_amicable_pairs_below(n)
 
 if __name__ == '__main__':
     print solve(10000)
