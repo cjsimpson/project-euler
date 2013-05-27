@@ -1,3 +1,8 @@
+"""
+Project Eurler Problem 21 Solution
+http://projecteuler.net/problem=21
+"""
+
 def proper_divisors(n):
     divisors = []
     if n > 1:
